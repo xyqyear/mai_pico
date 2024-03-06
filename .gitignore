@@ -5,3 +5,4 @@ Production/PCB/teeny_iidx
 .vscode
 firmware/mai2/mai2hook
 PCB/IO/mai_io-backups
+build/

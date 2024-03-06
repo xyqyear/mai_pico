@@ -20,14 +20,14 @@ static mai_cfg_t default_cfg = {
     .sense = {
         .filter = 0x10,
         .debounce_touch = 1,
-        .debounce_release = 2,
+        .debounce_release = 0,
      },
     .hid = {
         .joy = 0,
         .nkro = 1,
     },
     .rgb = {
-        .per_button = 1,
+        .per_button = 2,
         .per_aux = 1,
     },
     .alt = {
