@@ -14,7 +14,7 @@
 #define RGB_ORDER GRB // or RGB
 #define RGB_BUTTON_MAP { 3, 2, 1, 0, 7, 6, 5, 4, 8, 9, 10, 11 }
 
-#define BUTTON_DEF { 7, 6, 5, 4, 3, 0, 1, 2, 8, 9, 9, 9}
+#define BUTTON_DEF { 7, 6, 5, 4, 3, 0, 1, 2, 8, 9, 10, 11}
 
 #define BUTTON_PULL_UP { true, true, true, true, true, true, true, true, true, true, true, true }
 // true means the button is active high, false means active low
