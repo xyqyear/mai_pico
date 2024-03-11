@@ -18,6 +18,7 @@
 
 static const uint8_t gpio_def[] = BUTTON_DEF;
 static uint8_t gpio_real[] = BUTTON_DEF;
+static const bool button_active_state[] = BUTTON_ACTIVE_STATE;
 
 #define BUTTON_NUM (sizeof(gpio_def))
 
@@ -73,8 +74,8 @@ void button_update()
     uint16_t buttons = 0;
 
     for (int i = BUTTON_NUM - 1; i >= 0; i--) {
-        bool sw_pressed = gpio_get(gpio_real[i]);
-        
+        bool sw_pressed = !gpio_get(gpio_real[i]) ^ button_active_state[i];
+
         if (now >= sw_freeze_time[i]) {
             if (sw_pressed != sw_val[i]) {
                 sw_val[i] = sw_pressed;

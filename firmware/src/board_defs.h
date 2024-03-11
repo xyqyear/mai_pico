@@ -16,6 +16,9 @@
 
 #define BUTTON_DEF { 15, 12, 13, 14, 8, 9, 10, 11, 12, 0, 1, 2}
 
+// true means the button is active high, false means active low
+#define BUTTON_ACTIVE_STATE { true, true, true, true, true, true, true, true, false, false, false, false }
+
 /* HID Keycode: https://github.com/hathach/tinyusb/blob/master/src/class/hid/hid.h */
 // P1: WEDCXZAQ3(F1)(F2)(F3) P2: (Numpad)89632147*(F1)(F2)(F3)
 #define BUTTON_NKRO_MAP_P1 "\x1a\x08\x07\x06\x1b\x1d\x04\x14\x20\x3a\x3b\x3c"
