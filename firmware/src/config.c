@@ -15,7 +15,7 @@ static mai_cfg_t default_cfg = {
     .color = {
         .key_on = 0xc0c0c0,
         .key_off = 0x080808,
-        .level = 127,
+        .level = 255,
     },
     .sense = {
         .filter = 0x10,
