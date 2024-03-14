@@ -18,6 +18,7 @@
 
 static const uint8_t gpio_def[] = BUTTON_DEF;
 static uint8_t gpio_real[] = BUTTON_DEF;
+static const bool button_pull_up[] = BUTTON_PULL_UP;
 static const bool button_active_state[] = BUTTON_ACTIVE_STATE;
 
 #define BUTTON_NUM (sizeof(gpio_def))
@@ -39,7 +40,7 @@ void button_init()
         gpio_init(gpio);
         gpio_set_function(gpio, GPIO_FUNC_SIO);
         gpio_set_dir(gpio, GPIO_IN);
-        gpio_pull_up(gpio);
+        gpio_set_pulls(gpio, button_pull_up[i], !button_pull_up[i]);
     }
 }
 
