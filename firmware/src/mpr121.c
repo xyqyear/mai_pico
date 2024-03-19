@@ -82,14 +82,14 @@ void mpr121_init(uint8_t i2c_addr)
     //rising: baseline quick rising 
     write_reg(i2c_addr, 0x2B, 1); // Max half delta Rising 
     write_reg(i2c_addr, 0x2C, 1); // Noise half delta Rising 
-    write_reg(i2c_addr, 0x2D, 1); // Noise count limit Rising 
+    write_reg(i2c_addr, 0x2D, 8); // Noise count limit Rising 
     write_reg(i2c_addr, 0x2E, 1); // Delay limit Rising
 
     //falling: baseline slow falling 
     write_reg(i2c_addr, 0x2F, 1); // Max half delta Falling 
     write_reg(i2c_addr, 0x30, 1); // Noise half delta Falling 
-    write_reg(i2c_addr, 0x31, 6); // Noise count limit Falling 
-    write_reg(i2c_addr, 0x32, 12); // Delay limit Falling
+    write_reg(i2c_addr, 0x31, 8); // Noise count limit Falling 
+    write_reg(i2c_addr, 0x32, 16); // Delay limit Falling
 
     //touched: baseline very slow falling
     write_reg(i2c_addr, 0x33, 1); // Noise half delta Touched 
