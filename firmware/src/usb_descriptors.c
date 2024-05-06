@@ -147,7 +147,7 @@ uint8_t const* tud_descriptor_configuration_cb(uint8_t index) {
 // String Descriptors
 //--------------------------------------------------------------------+
 
-static char serial_number_str[24] = "123456\0";
+static char serial_number_str[24] = "223456\0";
 
 // array of pointer to string descriptors
 static const char *string_desc_arr[] = {
@@ -174,12 +174,12 @@ uint16_t const* tud_descriptor_string_cb(uint8_t index, uint16_t langid)
         _desc_str[0] = (TUSB_DESC_STRING << 8) | (2 + 2);
         return _desc_str;
     }
-    
-    if (index == 3) {
-        pico_unique_board_id_t board_id;
-        pico_get_unique_board_id(&board_id);
-        sprintf(serial_number_str, "%016llx", *(uint64_t *)&board_id);
-    }
+
+    // if (index == 3) {
+    //     pico_unique_board_id_t board_id;
+    //     pico_get_unique_board_id(&board_id);
+    //     sprintf(serial_number_str, "%016llx", *(uint64_t *)&board_id);
+    // }
 
     const char *str = string_desc_arr[index];
     uint8_t chr_count = strlen(str);
